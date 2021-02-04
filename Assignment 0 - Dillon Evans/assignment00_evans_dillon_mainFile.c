@@ -13,9 +13,19 @@
 #include <stdlib.h>
 #include "decl.h"
 
+/*Clears the input buffer*/
+static void clearBuffer()
+{
+   int c = 0;
+   /*Read in any characters (if any) left in the input buffer*/
+   while ((c = getchar()) != '\n' && c != EOF);
+}
 /*Program Entry Point*/
 int main()
 {
    playerInfo();
+   clearBuffer();
+   printf("Press Enter to Exit...");
+   getchar();
    return 0;
 }

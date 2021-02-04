@@ -20,19 +20,36 @@ struct PlayerInfo *createPlayerInfo(char *name, char *date, int gen)
 }
 
 /**
+ * Returns a line of user input from the console without overflow
+ * @return A string containing the input
+ */
+static char *getLine()
+{
+    char *buffer = malloc(BUFFER_SIZE);
+    char temp;
+    int len = 0;
+    while ((temp = getchar()) != '\n' && len < BUFFER_SIZE - 1)
+    {
+        buffer[len++] = temp;
+    }
+    buffer[len] = '\0';
+    return buffer;
+}
+
+/**
  *  Prompts the player to enter pertinent info
  */
 void playerInfo()
 {
-    char name[BUFFER_SIZE], date[BUFFER_SIZE], numBuffer[BUFFER_SIZE];
+    char *name, *date, numBuffer[BUFFER_SIZE];
     int numGenerations = 0;
     bool isValid = FALSE;
 
     printf("Enter Your Name >> ");
-    gets(name);
+    name = getLine();
    
     printf("Enter Today's Date >> ");
-    scanf("%s", date);
+    date = getLine();
 
     printf("Enter The Desired Number of Generations >> ");
     scanf("%s", numBuffer);
@@ -48,4 +65,6 @@ void playerInfo()
     struct PlayerInfo *info = createPlayerInfo(name, date, numGenerations);
     boardInitialization(info);
     readPlayersInformation(info);
+    free(name);
+    free(date);
 }

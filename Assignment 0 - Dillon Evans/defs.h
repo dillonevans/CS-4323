@@ -11,4 +11,3 @@ struct PlayerInfo
     char *date;
     int numGenerations;
 };
-

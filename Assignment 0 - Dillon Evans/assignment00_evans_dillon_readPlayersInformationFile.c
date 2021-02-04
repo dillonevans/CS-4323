@@ -12,7 +12,7 @@ void readPlayersInformation(struct PlayerInfo *info)
 {
     /*Open the file for writing*/
     FILE *outFile = fopen("summary.txt", "a");
-    fprintf(outFile, "%s %s %d\n", info->name, info->date, info->numGenerations);
+    fprintf(outFile, "%s, %s, %d\n", info->name, info->date, info->numGenerations);
 
     /*
         I close the file here only to open it again which may seem redundant,
