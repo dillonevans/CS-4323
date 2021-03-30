@@ -10,3 +10,8 @@ To Run:
 4) In the third, type "./driver" to run the client side. 
 5) After the first query you will be prompted to enter a number, this will be the number returned by "tty" as mentioned earlier.
 6) To view the results of each query, use the terminal you entered the "tty" command in.
+
+Task Allocations:
+Dillon - Server and Header, Client Connection to Server
+Tyler - Manager and Driver
+Nikul and Thomas - Client Side
