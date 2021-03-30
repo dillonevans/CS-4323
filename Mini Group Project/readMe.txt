@@ -3,7 +3,7 @@ To Compile:
 1) gcc driver.c manager.c assistant.c historySearch.c -o driver
 2) gcc server.c -o server -pthread
 
-To Run:
+To Run (Linux):
 1) Open three terminals
 2) In the first terminal, type "tty" and make note of the number
 3) In the second, type "./server" to start the server and establish the connection.
